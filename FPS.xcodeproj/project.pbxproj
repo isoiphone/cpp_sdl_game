@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0C374FC115886C28002C2A58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C374FC015886C28002C2A58 /* Cocoa.framework */; };
 		0C374FCB15886C28002C2A58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C374FC915886C28002C2A58 /* InfoPlist.strings */; };
-		0C374FCD15886C28002C2A58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FCC15886C28002C2A58 /* main.m */; };
-		0C374FD115886C28002C2A58 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C374FCF15886C28002C2A58 /* Credits.rtf */; };
-		0C374FD415886C28002C2A58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FD315886C28002C2A58 /* AppDelegate.m */; };
-		0C374FD715886C29002C2A58 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C374FD515886C29002C2A58 /* MainMenu.xib */; };
+		0C374FDF15886C48002C2A58 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FDE15886C48002C2A58 /* SDLMain.m */; };
+		0C374FE115886C86002C2A58 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C374FE015886C86002C2A58 /* SDL.framework */; };
+		0C374FE315886D21002C2A58 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FE215886D21002C2A58 /* main.cpp */; };
+		0C374FE515887153002C2A58 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C374FE415887153002C2A58 /* OpenGL.framework */; };
+		0C374FEA158879CD002C2A58 /* SDLGame.h in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FE9158879CD002C2A58 /* SDLGame.h */; };
+		0C374FEC15887A3D002C2A58 /* SDLGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FEB15887A3D002C2A58 /* SDLGame.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +23,17 @@
 		0C374FC315886C28002C2A58 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0C374FC415886C28002C2A58 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0C374FC515886C28002C2A58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0C374FC815886C28002C2A58 /* FPS-Info.plist */ = {isa = PBXFileReference; path = "FPS-Info.plist"; sourceTree = "<group>"; };
+		0C374FC815886C28002C2A58 /* FPS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FPS-Info.plist"; sourceTree = "<group>"; };
 		0C374FCA15886C28002C2A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0C374FCC15886C28002C2A58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0C374FCE15886C28002C2A58 /* FPS-Prefix.pch */ = {isa = PBXFileReference; path = "FPS-Prefix.pch"; sourceTree = "<group>"; };
-		0C374FD015886C28002C2A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		0C374FD215886C28002C2A58 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
-		0C374FD315886C28002C2A58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0C374FD615886C29002C2A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0C374FCE15886C28002C2A58 /* FPS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FPS-Prefix.pch"; sourceTree = "<group>"; };
+		0C374FDD15886C48002C2A58 /* SDLMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLMain.h; sourceTree = "<group>"; };
+		0C374FDE15886C48002C2A58 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLMain.m; sourceTree = "<group>"; };
+		0C374FE015886C86002C2A58 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
+		0C374FE215886D21002C2A58 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0C374FE415887153002C2A58 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		0C374FE815887457002C2A58 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
+		0C374FE9158879CD002C2A58 /* SDLGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLGame.h; sourceTree = "<group>"; };
+		0C374FEB15887A3D002C2A58 /* SDLGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SDLGame.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C374FC115886C28002C2A58 /* Cocoa.framework in Frameworks */,
+				0C374FE115886C86002C2A58 /* SDL.framework in Frameworks */,
+				0C374FE515887153002C2A58 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,28 +70,25 @@
 		0C374FBF15886C28002C2A58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C374FC015886C28002C2A58 /* Cocoa.framework */,
-				0C374FC215886C28002C2A58 /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0C374FC215886C28002C2A58 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
+				0C374FE015886C86002C2A58 /* SDL.framework */,
 				0C374FC315886C28002C2A58 /* AppKit.framework */,
 				0C374FC415886C28002C2A58 /* CoreData.framework */,
 				0C374FC515886C28002C2A58 /* Foundation.framework */,
+				0C374FE415887153002C2A58 /* OpenGL.framework */,
+				0C374FC015886C28002C2A58 /* Cocoa.framework */,
 			);
-			name = "Other Frameworks";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0C374FC615886C28002C2A58 /* FPS */ = {
 			isa = PBXGroup;
 			children = (
-				0C374FD215886C28002C2A58 /* AppDelegate.h */,
-				0C374FD315886C28002C2A58 /* AppDelegate.m */,
-				0C374FD515886C29002C2A58 /* MainMenu.xib */,
+				0C374FE9158879CD002C2A58 /* SDLGame.h */,
+				0C374FEB15887A3D002C2A58 /* SDLGame.cpp */,
+				0C374FE215886D21002C2A58 /* main.cpp */,
+				0C374FE815887457002C2A58 /* game.h */,
+				0C374FDD15886C48002C2A58 /* SDLMain.h */,
+				0C374FDE15886C48002C2A58 /* SDLMain.m */,
 				0C374FC715886C28002C2A58 /* Supporting Files */,
 			);
 			path = FPS;
@@ -95,9 +99,7 @@
 			children = (
 				0C374FC815886C28002C2A58 /* FPS-Info.plist */,
 				0C374FC915886C28002C2A58 /* InfoPlist.strings */,
-				0C374FCC15886C28002C2A58 /* main.m */,
 				0C374FCE15886C28002C2A58 /* FPS-Prefix.pch */,
-				0C374FCF15886C28002C2A58 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,8 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C374FCB15886C28002C2A58 /* InfoPlist.strings in Resources */,
-				0C374FD115886C28002C2A58 /* Credits.rtf in Resources */,
-				0C374FD715886C29002C2A58 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +166,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C374FCD15886C28002C2A58 /* main.m in Sources */,
-				0C374FD415886C28002C2A58 /* AppDelegate.m in Sources */,
+				0C374FDF15886C48002C2A58 /* SDLMain.m in Sources */,
+				0C374FE315886D21002C2A58 /* main.cpp in Sources */,
+				0C374FEA158879CD002C2A58 /* SDLGame.h in Sources */,
+				0C374FEC15887A3D002C2A58 /* SDLGame.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,22 +182,6 @@
 				0C374FCA15886C28002C2A58 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0C374FCF15886C28002C2A58 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C374FD015886C28002C2A58 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		0C374FD515886C29002C2A58 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C374FD615886C29002C2A58 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

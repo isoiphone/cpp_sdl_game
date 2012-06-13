@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C374FC115886C28002C2A58 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C374FC015886C28002C2A58 /* Cocoa.framework */; };
+		0C374FCB15886C28002C2A58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C374FC915886C28002C2A58 /* InfoPlist.strings */; };
+		0C374FCD15886C28002C2A58 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FCC15886C28002C2A58 /* main.m */; };
+		0C374FD115886C28002C2A58 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C374FCF15886C28002C2A58 /* Credits.rtf */; };
+		0C374FD415886C28002C2A58 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C374FD315886C28002C2A58 /* AppDelegate.m */; };
+		0C374FD715886C29002C2A58 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C374FD515886C29002C2A58 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C374FBC15886C28002C2A58 /* FPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C374FC015886C28002C2A58 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0C374FC315886C28002C2A58 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0C374FC415886C28002C2A58 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0C374FC515886C28002C2A58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0C374FC815886C28002C2A58 /* FPS-Info.plist */ = {isa = PBXFileReference; path = "FPS-Info.plist"; sourceTree = "<group>"; };
+		0C374FCA15886C28002C2A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C374FCC15886C28002C2A58 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0C374FCE15886C28002C2A58 /* FPS-Prefix.pch */ = {isa = PBXFileReference; path = "FPS-Prefix.pch"; sourceTree = "<group>"; };
+		0C374FD015886C28002C2A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0C374FD215886C28002C2A58 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		0C374FD315886C28002C2A58 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0C374FD615886C29002C2A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C374FB915886C28002C2A58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C374FC115886C28002C2A58 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C374FB115886C28002C2A58 = {
+			isa = PBXGroup;
+			children = (
+				0C374FC615886C28002C2A58 /* FPS */,
+				0C374FBF15886C28002C2A58 /* Frameworks */,
+				0C374FBD15886C28002C2A58 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C374FBD15886C28002C2A58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C374FBC15886C28002C2A58 /* FPS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C374FBF15886C28002C2A58 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C374FC015886C28002C2A58 /* Cocoa.framework */,
+				0C374FC215886C28002C2A58 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C374FC215886C28002C2A58 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C374FC315886C28002C2A58 /* AppKit.framework */,
+				0C374FC415886C28002C2A58 /* CoreData.framework */,
+				0C374FC515886C28002C2A58 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0C374FC615886C28002C2A58 /* FPS */ = {
+			isa = PBXGroup;
+			children = (
+				0C374FD215886C28002C2A58 /* AppDelegate.h */,
+				0C374FD315886C28002C2A58 /* AppDelegate.m */,
+				0C374FD515886C29002C2A58 /* MainMenu.xib */,
+				0C374FC715886C28002C2A58 /* Supporting Files */,
+			);
+			path = FPS;
+			sourceTree = "<group>";
+		};
+		0C374FC715886C28002C2A58 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C374FC815886C28002C2A58 /* FPS-Info.plist */,
+				0C374FC915886C28002C2A58 /* InfoPlist.strings */,
+				0C374FCC15886C28002C2A58 /* main.m */,
+				0C374FCE15886C28002C2A58 /* FPS-Prefix.pch */,
+				0C374FCF15886C28002C2A58 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C374FBB15886C28002C2A58 /* FPS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C374FDA15886C29002C2A58 /* Build configuration list for PBXNativeTarget "FPS" */;
+			buildPhases = (
+				0C374FB815886C28002C2A58 /* Sources */,
+				0C374FB915886C28002C2A58 /* Frameworks */,
+				0C374FBA15886C28002C2A58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FPS;
+			productName = FPS;
+			productReference = 0C374FBC15886C28002C2A58 /* FPS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C374FB315886C28002C2A58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Jacob Schwartz";
+			};
+			buildConfigurationList = 0C374FB615886C28002C2A58 /* Build configuration list for PBXProject "FPS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0C374FB115886C28002C2A58;
+			productRefGroup = 0C374FBD15886C28002C2A58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C374FBB15886C28002C2A58 /* FPS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C374FBA15886C28002C2A58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C374FCB15886C28002C2A58 /* InfoPlist.strings in Resources */,
+				0C374FD115886C28002C2A58 /* Credits.rtf in Resources */,
+				0C374FD715886C29002C2A58 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C374FB815886C28002C2A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C374FCD15886C28002C2A58 /* main.m in Sources */,
+				0C374FD415886C28002C2A58 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0C374FC915886C28002C2A58 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C374FCA15886C28002C2A58 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0C374FCF15886C28002C2A58 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C374FD015886C28002C2A58 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0C374FD515886C29002C2A58 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C374FD615886C29002C2A58 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C374FD815886C29002C2A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0C374FD915886C29002C2A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0C374FDB15886C29002C2A58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FPS/FPS-Prefix.pch";
+				INFOPLIST_FILE = "FPS/FPS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0C374FDC15886C29002C2A58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FPS/FPS-Prefix.pch";
+				INFOPLIST_FILE = "FPS/FPS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C374FB615886C28002C2A58 /* Build configuration list for PBXProject "FPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C374FD815886C29002C2A58 /* Debug */,
+				0C374FD915886C29002C2A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C374FDA15886C29002C2A58 /* Build configuration list for PBXNativeTarget "FPS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C374FDB15886C29002C2A58 /* Debug */,
+				0C374FDC15886C29002C2A58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C374FB315886C28002C2A58 /* Project object */;
+}

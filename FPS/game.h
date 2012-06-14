@@ -5,6 +5,9 @@
 
 class Gamepad {
 public:
+    Gamepad() {}
+    virtual ~Gamepad() {}
+    
     enum EButton {  NONE=0,
                     UP=(1<<0),
                     DOWN=(1<<1),

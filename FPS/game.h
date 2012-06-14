@@ -17,8 +17,8 @@ public:
     virtual bool didPress(EButton button) const =0;
     
     virtual void update()=0;
-    virtual void save(std::ostream fout)=0;
-    virtual void load(std::istream fin)=0;
+//    virtual void save(std::ostream& fout)=0;
+//    virtual void load(std::istream& fin)=0;
 };
 
 

@@ -7,6 +7,9 @@ SDLGamepad::SDLGamepad() {
     mCurState = mPrevState = mDeltaState = 0;
 }
 
+SDLGamepad::~SDLGamepad() {
+}
+
 bool SDLGamepad::isDown(EButton button) const {
     return (mCurState & button);
 }
@@ -21,77 +24,71 @@ void SDLGamepad::update() {
     mPrevState = mCurState;
     
     while (SDL_PollEvent(&event)) {
-        switch(event.type) {
-            case SDL_KEYDOWN:
-                switch(event.key.keysym.sym){
-                    case SDLK_a:
-                    case SDLK_LEFT:
-                        mCurState |= LEFT;
-                        break;
-                    case SDLK_d:
-                    case SDLK_RIGHT:
-                        mCurState |= RIGHT;
-                        break;
-                    case SDLK_w:
-                    case SDLK_UP:
-                        mCurState |= UP;
-                        break;
-                    case SDLK_s:
-                    case SDLK_DOWN:
-                        mCurState |= DOWN;
-                        break;
-                    case SDLK_SPACE:
-                        mCurState |= JUMP;
-                        break;
-                    default:
-                        break;
-                }
-                break;
-                
-            case SDL_KEYUP:
-                switch(event.key.keysym.sym) {
-                    case SDLK_a:
-                    case SDLK_LEFT:
-                        mCurState &= ~LEFT;
-                        break;
-                    case SDLK_d:
-                    case SDLK_RIGHT:
-                        mCurState &= ~RIGHT;
-                        break;
-                    case SDLK_w:
-                    case SDLK_UP:
-                        mCurState &= ~UP;
-                        break;
-                    case SDLK_s:
-                    case SDLK_DOWN:
-                        mCurState &= ~DOWN;
-                        break;
-                    case SDLK_SPACE:
-                        mCurState &= ~JUMP;
-                        break;
-                    default:
-                        break;
-                }
-                break;
-                
-            case SDL_QUIT:
-                RequestQuit();
-                break;
+        if (event.type == SDL_KEYDOWN) {
+            switch(event.key.keysym.sym) {
+                case SDLK_a:
+                case SDLK_LEFT:
+                    mCurState |= LEFT;
+                    break;
+                case SDLK_d:
+                case SDLK_RIGHT:
+                    mCurState |= RIGHT;
+                    break;
+                case SDLK_w:
+                case SDLK_UP:
+                    mCurState |= UP;
+                    break;
+                case SDLK_s:
+                case SDLK_DOWN:
+                    mCurState |= DOWN;
+                    break;
+                case SDLK_SPACE:
+                    mCurState |= JUMP;
+                    break;
+                default:
+                    break;
+            }
+        } else if (event.type == SDL_KEYUP) {
+            switch(event.key.keysym.sym) {
+                case SDLK_a:
+                case SDLK_LEFT:
+                    mCurState &= ~LEFT;
+                    break;
+                case SDLK_d:
+                case SDLK_RIGHT:
+                    mCurState &= ~RIGHT;
+                    break;
+                case SDLK_w:
+                case SDLK_UP:
+                    mCurState &= ~UP;
+                    break;
+                case SDLK_s:
+                case SDLK_DOWN:
+                    mCurState &= ~DOWN;
+                    break;
+                case SDLK_SPACE:
+                    mCurState &= ~JUMP;
+                    break;
+                default:
+                    break;
+            }
+        } else if (event.type == SDL_QUIT) {
+            RequestQuit();
         }
     }
     
     mDeltaState = mPrevState ^ mCurState;
 }
 
-void SDLGamepad::save(std::ostream fout) {
-    fout << mCurState;
-}
-
-void SDLGamepad::load(std::istream fin) {
-    mPrevState = mCurState;
-    fin >> mCurState;
-    mDeltaState = mPrevState ^ mCurState;
-}
+//void SDLGamepad::save(std::ostream& fout) {
+//    fout << mCurState;
+//}
+//
+//void SDLGamepad::load(std::istream& fin) {
+//    mPrevState = mCurState;
+//    fin >> mCurState;
+//    mDeltaState = mPrevState ^ mCurState;
+//}
 
 
 //

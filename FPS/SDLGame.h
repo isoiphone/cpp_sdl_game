@@ -8,13 +8,14 @@
 class SDLGamepad : public Gamepad {
 public:
     SDLGamepad();
+    virtual ~SDLGamepad();
     
     virtual bool isDown(EButton button) const;
     virtual bool didPress(EButton button) const;
     
     virtual void update();
-    virtual void save(std::ostream fout);
-    virtual void load(std::istream fin);
+//    virtual void save(std::ostream& fout);
+//    virtual void load(std::istream& fin);
     
 protected:
     Uint32 mCurState, mPrevState, mDeltaState;

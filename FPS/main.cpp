@@ -50,6 +50,8 @@ int main(int argc, char* args[])
     }
     
     delete game;
+    delete gamepad;
+    
     SDL_Quit();
     
     return 0;

@@ -3,6 +3,8 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 
+#include "glm/glm.hpp"
+
 #include "game.h"
 
 class SDLGamepad : public Gamepad {

@@ -31,7 +31,6 @@ public:
     virtual void render();
     
 protected:
-    int mScreenWidth, mScreenHeight;
     float mRotation;
 };
 

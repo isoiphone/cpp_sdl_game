@@ -24,8 +24,14 @@ public:
 
 class Game {
 public:
+    Game(int screenWidth, int screenHeight) : mScreenWidth(screenWidth), mScreenHeight(screenHeight) {}
+    virtual ~Game() {}
+    
     virtual void update(const Gamepad& gamepad)=0;
     virtual void render()=0;
+    
+protected:
+    int mScreenWidth, mScreenHeight;
 };
 
 extern void RequestQuit();

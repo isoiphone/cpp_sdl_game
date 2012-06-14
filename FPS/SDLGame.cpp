@@ -93,7 +93,7 @@ void SDLGamepad::update() {
 
 //
 ///
-SDLGame::SDLGame(int screenWidth, int screenHeight) : mScreenWidth(screenWidth), mScreenHeight(screenHeight) {
+SDLGame::SDLGame(int screenWidth, int screenHeight) : Game(screenWidth, screenHeight) {
 	glClearColor(0, 0, 0, 0);
     
 	glMatrixMode(GL_PROJECTION);

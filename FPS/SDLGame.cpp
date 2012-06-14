@@ -73,6 +73,12 @@ void SDLGamepad::update() {
                 case SDLK_SPACE:
                     mCurState &= ~JUMP;
                     break;
+                #ifndef NDEBUG
+                // I have no patience :(
+                case SDLK_ESCAPE:
+                    RequestQuit();
+                    break;
+                #endif
                 default:
                     break;
             }

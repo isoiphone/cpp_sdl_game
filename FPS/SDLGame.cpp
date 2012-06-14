@@ -5,9 +5,13 @@
 ///
 SDLGamepad::SDLGamepad() {
     mCurState = mPrevState = mDeltaState = 0;
+    SDL_WM_GrabInput(SDL_GRAB_ON);
+    SDL_ShowCursor(SDL_DISABLE);
 }
 
 SDLGamepad::~SDLGamepad() {
+    SDL_WM_GrabInput(SDL_GRAB_OFF);
+    SDL_ShowCursor(SDL_ENABLE);
 }
 
 bool SDLGamepad::isDown(EButton button) const {
@@ -77,6 +81,24 @@ void SDLGamepad::update() {
         }
     }
     
+    // get mouse button / position
+    mPrevX = mCurX;
+    mPrevY = mCurY;
+    const Uint8 button = SDL_GetMouseState(&mCurX, &mCurY);
+    
+    // left button
+    if (button&1)
+        mCurState |= FIRE;
+    else
+        mCurState &= ~FIRE;
+    
+    // right button
+    if (button&3)
+        mCurState |= SPECIAL;
+    else
+        mCurState &= ~SPECIAL;
+    
+    //
     mDeltaState = mPrevState ^ mCurState;
 }
 
@@ -122,6 +144,11 @@ void SDLGame::update(const Gamepad& gamepad) {
     } else if (gamepad.isDown(Gamepad::UP)) {
         mRotation += 5.0f;
     }
+    
+    // sort of a SDL hack. reset mouse to middle of window so we never 'lose' it
+    SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
+    SDL_WarpMouse(mScreenWidth/2, mScreenHeight/2);
+    SDL_EventState(SDL_MOUSEMOTION, SDL_ENABLE);
 }
 
 void SDLGame::render() {

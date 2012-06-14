@@ -19,6 +19,7 @@ public:
     
 protected:
     Uint32 mCurState, mPrevState, mDeltaState;
+    int mCurX, mCurY, mPrevX, mPrevY;
 };
 
 

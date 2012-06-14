@@ -14,7 +14,8 @@ public:
                     LEFT=(1<<2),
                     RIGHT=(1<<3),
                     JUMP=(1<<4),
-                    FIRE=(1<<5) };
+                    FIRE=(1<<5),
+                    SPECIAL=(1<<6)};
     
     virtual bool isDown(EButton button) const =0;
     virtual bool didPress(EButton button) const =0;

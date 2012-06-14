@@ -32,6 +32,8 @@ public:
     virtual void render();
     
 protected:
-    float mRotation;
+    // coordinates are in meters, yo'
+    float mX, mY, mZ;
+    float mPitch, mYaw, mRoll;
 };
 

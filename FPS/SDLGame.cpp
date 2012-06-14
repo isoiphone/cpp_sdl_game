@@ -126,7 +126,7 @@ SDLGame::SDLGame(int screenWidth, int screenHeight) : Game(screenWidth, screenHe
     
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(45.0, ((float)screenWidth/(float)screenHeight), 0.1, 100.0);
+	gluPerspective(45.0, ((float)screenWidth/(float)screenHeight), 0.1, 1000.0); // TODO: experiment with different FOVs
     
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -136,20 +136,38 @@ SDLGame::SDLGame(int screenWidth, int screenHeight) : Game(screenWidth, screenHe
 
     assert(glGetError() == GL_NO_ERROR);
     
-    mRotation = 0.0f;
+    mX = 0.0f;
+    mY = 1.8f;
+    mZ = 6.0f;
+    
+    mPitch = mYaw = mRoll = 0;
 }
 
 SDLGame::~SDLGame() {
 }
     
 void SDLGame::update(const Gamepad& gamepad) {
-    mRotation -= 0.5f;
-    
-    if (gamepad.didPress(Gamepad::LEFT)) {
-        mRotation -= 20.0f;
-    } else if (gamepad.isDown(Gamepad::UP)) {
-        mRotation += 5.0f;
+    if (gamepad.isDown(Gamepad::LEFT)) {
+        mX -= 0.05;
+    } else if (gamepad.isDown(Gamepad::RIGHT)) {
+        mX += 0.05;
     }
+    
+    if (gamepad.isDown(Gamepad::UP)) {
+        mZ -= 0.05;
+    } else if (gamepad.isDown(Gamepad::DOWN)) {
+        mZ += 0.05;
+    }
+    
+    if (gamepad.isDown(Gamepad::JUMP)) {
+        mY += 0.05;
+    } else {
+        mY -= 0.05;
+        
+        if (mY < 1.8)
+            mY = 1.8;
+    }
+    
     
     // sort of a SDL hack. reset mouse to middle of window so we never 'lose' it
     SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
@@ -159,8 +177,8 @@ void SDLGame::update(const Gamepad& gamepad) {
 
 void SDLGame::render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
-    glTranslatef(0.0f, 0.0f, -6.0f);
-    glRotatef(mRotation, 1.0f, 1.0f, 0.0f);
+
+    glTranslatef(-mX,-mY,-mZ);
     
     glBegin(GL_QUADS);
     

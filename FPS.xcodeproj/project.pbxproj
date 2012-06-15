@@ -34,6 +34,8 @@
 		0C374FE815887457002C2A58 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		0C374FE9158879CD002C2A58 /* SDLGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLGame.h; sourceTree = "<group>"; };
 		0C374FEB15887A3D002C2A58 /* SDLGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SDLGame.cpp; sourceTree = "<group>"; };
+		0C7205A31589C8D000A4CCBE /* ext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ext.hpp; sourceTree = "<group>"; };
+		0C7205A41589C8D000A4CCBE /* glm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = glm.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		0C374FC615886C28002C2A58 /* FPS */ = {
 			isa = PBXGroup;
 			children = (
+				0C7205541589C8D000A4CCBE /* glm */,
 				0C374FE9158879CD002C2A58 /* SDLGame.h */,
 				0C374FEB15887A3D002C2A58 /* SDLGame.cpp */,
 				0C374FE215886D21002C2A58 /* main.cpp */,
@@ -102,6 +105,15 @@
 				0C374FCE15886C28002C2A58 /* FPS-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C7205541589C8D000A4CCBE /* glm */ = {
+			isa = PBXGroup;
+			children = (
+				0C7205A31589C8D000A4CCBE /* ext.hpp */,
+				0C7205A41589C8D000A4CCBE /* glm.hpp */,
+			);
+			path = glm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +285,7 @@
 				0C374FDC15886C29002C2A58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -160,60 +160,11 @@ SDLGame::SDLGame(int screenWidth, int screenHeight) : Game(screenWidth, screenHe
 
 SDLGame::~SDLGame() {
 }
-    
-void SDLGame::update(const Gamepad& gamepad) {
-    const float speed = 0.1f;
-    
-    const glm::vec3 right = glm::cross(mDirection, mUp);
-    if (gamepad.isDown(Gamepad::LEFT)) {
-        mPosition -= right*speed;
-    } else if (gamepad.isDown(Gamepad::RIGHT)) {
-        mPosition += right*speed;
-    }
 
-    const glm::vec3 forward = glm::normalize( glm::vec3(mDirection.x, 0.0f, mDirection.z) );
-    if (gamepad.isDown(Gamepad::UP)) {
-        mPosition += forward*speed;
-    } else if (gamepad.isDown(Gamepad::DOWN)) {
-        mPosition -= forward*speed;
-    }
-
-    int dx,dy;
-    gamepad.getStick(&dx, &dy);
-
-    mDirection = glm::rotate(mDirection, -dx*0.05f, mUp);
-    mDirection = glm::rotate(mDirection, -dy*0.05f, right);
-}
-
-void SDLGame::render() {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
-
-    glm::mat4 projection = glm::perspective(45.0f, (float)mScreenWidth/(float)mScreenHeight, 0.1f, 100.0f);
-    glm::mat4 view = glm::lookAt(mPosition+mHeadOfs, mPosition+mDirection+mHeadOfs, mUp);
-    
-    glMatrixMode(GL_PROJECTION);
-    glLoadMatrixf(glm::value_ptr(projection));
-    glMatrixMode(GL_MODELVIEW);
-    glLoadMatrixf(glm::value_ptr(view));
-    
-    
-//    float avatarYaw = 0.0f;
-//    
-//    glLoadMatrixf(<#const GLfloat *m#>)
-//    
-//    glm::mat4 glm::rotate(glm::mat4(1.0f), avatarYaw, glm::vec3(0.0f, 0.0f, 1.0f));
-//
-////    glm::vec3 facing = glm::rotate(glm::mat4(1.0f), avatarYaw, glm::vec3(0.0f, 0.0f, 1.0f));
-////    glm::vec3 lookAt = mPosition + facing;
-////    glm::vec4 = Matrix.CreateLookAt(mPosition, cameraLookat, new Vector3(0.0f, 1.0f, 0.0f));
-//    glm::lookAt(mPosition, mPosition, glm::vec3(0.0f, 0.0f, 1.0f))
-//
-//    glm::lookAt(glm::vec3(0.0f,0.0f, 0.0f),
-//                glm::vec3(0.0f,0.0f,-1.0f),
-//                glm::vec3(0.0f,1.0f, 0.0f));
-    
-    
+static void drawCube() {
     glBegin(GL_QUADS);
+    glScalef(0.5f, 0.5f, 0.5f);
+    glTranslatef(0.0f, 1.0f, 0.0f);
     
     // top
     glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
@@ -258,7 +209,54 @@ void SDLGame::render() {
     glVertex3f(1.0f, -1.0f, -1.0f);
     
     glEnd();
-    glLoadIdentity();
+}
+
+void SDLGame::update(const Gamepad& gamepad) {
+    const float speed = 0.2f;
+    
+    const glm::vec3 right = glm::cross(mDirection, mUp);
+    if (gamepad.isDown(Gamepad::LEFT)) {
+        mPosition -= right*speed;
+    } else if (gamepad.isDown(Gamepad::RIGHT)) {
+        mPosition += right*speed;
+    }
+
+    const glm::vec3 forward = glm::normalize( glm::vec3(mDirection.x, 0.0f, mDirection.z) );
+    if (gamepad.isDown(Gamepad::UP)) {
+        mPosition += forward*speed;
+    } else if (gamepad.isDown(Gamepad::DOWN)) {
+        mPosition -= forward*speed;
+    }
+
+    int dx,dy;
+    gamepad.getStick(&dx, &dy);
+
+    mDirection = glm::rotate(mDirection, -dx*0.05f, mUp);
+    mDirection = glm::rotate(mDirection, -dy*0.05f, right);
+}
+
+void SDLGame::render() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
+
+    glm::mat4 projection = glm::perspective(45.0f, (float)mScreenWidth/(float)mScreenHeight, 0.1f, 100.0f);
+    glm::mat4 view = glm::lookAt(mPosition+mHeadOfs, mPosition+mDirection+mHeadOfs, mUp);
+    
+    glMatrixMode(GL_PROJECTION);
+    glLoadMatrixf(glm::value_ptr(projection));
+    glMatrixMode(GL_MODELVIEW);
+    glLoadMatrixf(glm::value_ptr(view));
+    
+    // draw some crap
+    srand(0);
+    for (int i=0; i<1000; ++i) {
+        const float x = ((rand()/(float)RAND_MAX)-0.5f)*1000;
+        const float z = ((rand()/(float)RAND_MAX)-0.5f)*1000;
+        glPushMatrix();
+            glTranslatef(x, 0, z);
+            drawCube();
+        glPopMatrix();
+    }
+
     
     SDL_GL_SwapBuffers();
 }

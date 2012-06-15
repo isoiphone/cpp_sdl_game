@@ -238,7 +238,7 @@ void SDLGame::update(const Gamepad& gamepad) {
 void SDLGame::render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
 
-    glm::mat4 projection = glm::perspective(45.0f, (float)mScreenWidth/(float)mScreenHeight, 0.1f, 100.0f);
+    glm::mat4 projection = glm::perspective(45.0f, (float)mScreenWidth/(float)mScreenHeight, 0.1f, 500.0f);
     glm::mat4 view = glm::lookAt(mPosition+mHeadOfs, mPosition+mDirection+mHeadOfs, mUp);
     
     glMatrixMode(GL_PROJECTION);

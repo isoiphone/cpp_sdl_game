@@ -14,6 +14,7 @@ public:
     
     virtual bool isDown(EButton button) const;
     virtual bool didPress(EButton button) const;
+    virtual void getStick(int* mx, int* my) const;
     
     virtual void update();
 //    virtual void save(std::ostream& fout);
@@ -21,7 +22,7 @@ public:
     
 protected:
     Uint32 mCurState, mPrevState, mDeltaState;
-    int mCurX, mCurY, mPrevX, mPrevY;
+    int mX, mY;
 };
 
 
@@ -34,8 +35,8 @@ public:
     virtual void render();
     
 protected:
-    // coordinates are in meters, yo'
-    float mX, mY, mZ;
-    float mPitch, mYaw, mRoll;
+    // units are in meters, yo'
+    float mPitch, mYaw;
+    glm::vec3 mPosition, mDirection, mRight, mUp;
 };
 

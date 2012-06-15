@@ -19,6 +19,7 @@ public:
     
     virtual bool isDown(EButton button) const =0;
     virtual bool didPress(EButton button) const =0;
+    virtual void getStick(int* mx, int* my) const =0;
     
     virtual void update()=0;
 //    virtual void save(std::ostream& fout)=0;

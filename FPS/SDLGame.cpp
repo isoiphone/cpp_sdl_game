@@ -152,9 +152,10 @@ SDLGame::SDLGame(int screenWidth, int screenHeight) : Game(screenWidth, screenHe
 
     assert(glGetError() == GL_NO_ERROR);
     
-    mYaw = M_PI;
-    mPitch = 0.0f;
     mPosition = glm::vec3(0.0f, 0.0f, 10.0f);
+    mDirection = glm::vec3(0.0f, 0.0f, -1.0f);
+    mUp = glm::vec3(0.0f, 1.0f, 0.0f);
+    mHeadOfs = glm::vec3(0.0f, 1.8f, 0.0f);
 }
 
 SDLGame::~SDLGame() {
@@ -163,42 +164,32 @@ SDLGame::~SDLGame() {
 void SDLGame::update(const Gamepad& gamepad) {
     const float speed = 0.1f;
     
+    const glm::vec3 right = glm::cross(mDirection, mUp);
     if (gamepad.isDown(Gamepad::LEFT)) {
-        mPosition -= mRight*speed;
+        mPosition -= right*speed;
     } else if (gamepad.isDown(Gamepad::RIGHT)) {
-        mPosition += mRight*speed;
+        mPosition += right*speed;
     }
 
+    const glm::vec3 forward = glm::normalize( glm::vec3(mDirection.x, 0.0f, mDirection.z) );
     if (gamepad.isDown(Gamepad::UP)) {
-        mPosition += mDirection*speed;
+        mPosition += forward*speed;
     } else if (gamepad.isDown(Gamepad::DOWN)) {
-        mPosition -= mDirection*speed;
+        mPosition -= forward*speed;
     }
 
     int dx,dy;
     gamepad.getStick(&dx, &dy);
-    
-//    printf("%d, %d\n", dx, dy);
-    
-    mYaw -= dx*0.005f;
-    mPitch -= dy*0.005f;
-    
-    mDirection = glm::vec3(cos(mPitch) * sin(mYaw),
-                           sin(mPitch),
-                           cos(mPitch) * cos(mYaw));
-    
-    mRight = glm::vec3(sin(mYaw - M_PI_2),
-                       0,
-                       cos(mYaw - M_PI_2));
-    
-    mUp = glm::cross(mRight, mDirection);
+
+    mDirection = glm::rotate(mDirection, -dx*0.05f, mUp);
+    mDirection = glm::rotate(mDirection, -dy*0.05f, right);
 }
 
 void SDLGame::render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
 
     glm::mat4 projection = glm::perspective(45.0f, (float)mScreenWidth/(float)mScreenHeight, 0.1f, 100.0f);
-    glm::mat4 view = glm::lookAt(mPosition, mPosition+mDirection, mUp);
+    glm::mat4 view = glm::lookAt(mPosition+mHeadOfs, mPosition+mDirection+mHeadOfs, mUp);
     
     glMatrixMode(GL_PROJECTION);
     glLoadMatrixf(glm::value_ptr(projection));

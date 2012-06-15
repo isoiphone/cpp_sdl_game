@@ -36,7 +36,6 @@ public:
     
 protected:
     // units are in meters, yo'
-    float mPitch, mYaw;
-    glm::vec3 mPosition, mDirection, mRight, mUp;
+    glm::vec3 mPosition, mDirection, mUp, mHeadOfs;
 };
 

@@ -217,22 +217,28 @@ void SDLGame::update(const Gamepad& gamepad) {
     const glm::vec3 right = glm::cross(mDirection, mUp);
     if (gamepad.isDown(Gamepad::LEFT)) {
         mPosition -= right*speed;
-    } else if (gamepad.isDown(Gamepad::RIGHT)) {
+    } 
+    if (gamepad.isDown(Gamepad::RIGHT)) {
         mPosition += right*speed;
     }
 
     const glm::vec3 forward = glm::normalize( glm::vec3(mDirection.x, 0.0f, mDirection.z) );
     if (gamepad.isDown(Gamepad::UP)) {
         mPosition += forward*speed;
-    } else if (gamepad.isDown(Gamepad::DOWN)) {
+    } 
+    if (gamepad.isDown(Gamepad::DOWN)) {
         mPosition -= forward*speed;
     }
 
     int dx,dy;
     gamepad.getStick(&dx, &dy);
 
-    mDirection = glm::rotate(mDirection, -dx*0.05f, mUp);
-    mDirection = glm::rotate(mDirection, -dy*0.05f, right);
+    if (dx) {
+        mDirection = glm::rotate(mDirection, -dx*0.05f, mUp);
+    }
+    if (dy) {
+        mDirection = glm::rotate(mDirection, -dy*0.05f, right);
+    }
 }
 
 void SDLGame::render() {

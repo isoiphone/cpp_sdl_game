@@ -110,7 +110,7 @@ void SDLGamepad::update() {
     mX = cx-400;
     mY = cy-300;
 
-    printf("%d, %d\n", mX, mY);
+    //printf("%d, %d\n", mX, mY);
     
     // SDL hack. reset mouse to middle of window so we never 'lose' it
     SDL_WarpMouse(400, 300); 
@@ -252,7 +252,7 @@ void SDLGame::render() {
     glMatrixMode(GL_MODELVIEW);
     glLoadMatrixf(glm::value_ptr(view));
     
-    // draw some crap
+    // draw a massive field of cubes
     srand(0);
     for (int i=0; i<1000; ++i) {
         const float x = ((rand()/(float)RAND_MAX)-0.5f)*1000;
